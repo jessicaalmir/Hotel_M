@@ -14,14 +14,9 @@
   </head>
   <body>
     <div id="container">
-      <div class="sign-out">
-        Welcome <c:out value="${pageContext.request.remoteUser}"/>
-        <a href="logout">
-          <input type="submit" name="sig-out" value="Sign-out" class="button" id="sign-out">
-        </a>
-      </div>
 
-      <div >
+
+      <div>
         <jsp:include page="navbar.jsp"/>
       </div>
       <div class="desktop">

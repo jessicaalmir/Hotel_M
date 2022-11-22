@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,21 +15,25 @@
 <header>
     <a href="home"><img class="logo" src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Flash Travels logo"></a>
     <h1>Flash System</h1>
+    <div class="sign-out">
+        Welcome <c:out value="${pageContext.request.remoteUser}"/>
+        <a href="logout">
+            <input type="submit" name="sig-out" value="Sign-out" class="button" id="sign-out">
+        </a>
+    </div>
 </header>
 <body>
-    <nav class="navbar navbar-dark navbar-expand" style="background-color: #112c3c">
-        <ul class="navbar-nav mr-auto">
-            <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
-            <li><a href="${pageContext.request.contextPath}/hotel">Hotel</a></li>
-            <li><a href="${pageContext.request.contextPath}/booking">Booking</a></li>
-            <li><a href="${pageContext.request.contextPath}/checking">Check-In</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Reservation</a></li>
-            <li><a href="${pageContext.request.contextPath}/payment">Payment</a></li>
-        </ul>
-    </nav>
-            <%-- <li><a href="profile.jsp">
-            <% if(session.getAttribute("username")!=null) {%>
-                            Hi <%=session.getAttribute("username")%> !!
-            <%} %>
-            </a></li> --%>
+    <div class="container">
+        <nav class="navbar navbar-dark navbar-expand " style="background-color: #112c3c">
+            <ul class="navbar-nav mr-auto">
+                <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/hotel">Hotel</a></li>
+                <li><a href="${pageContext.request.contextPath}/booking">Booking</a></li>
+                <li><a href="${pageContext.request.contextPath}/checking">Check-In</a></li>
+                <li><a href="${pageContext.request.contextPath}/">Reservation</a></li>
+                <li><a href="${pageContext.request.contextPath}/payment">Payment</a></li>
+            </ul>
+        </nav>
+
+    </div>
     <div class="container">
