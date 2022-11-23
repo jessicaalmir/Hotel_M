@@ -439,7 +439,7 @@ footer {
     transition: all 0.1s ease-in-out; /*dd an effect in a property of one element and the duration*/
     background-image: url("../images/banner/banner1.jpg"); /*images location*/
     animation: banner-desktop 30s infinite;
-    margin: 0em 0em 4em 0em;
+    margin: 0em 0em 0em 0em;
   }
   /*Add animation to the banner, divide 100% in three images*/
   @keyframes banner-desktop {

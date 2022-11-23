@@ -13,9 +13,6 @@
     <meta name="viewport" content="width=deviace-width, initial-scale=1">
   </head>
   <body>
-    <div id="container">
-
-
       <div>
         <jsp:include page="navbar.jsp"/>
       </div>
@@ -24,6 +21,5 @@
         </div>
       </div>
       <jsp:include page="footer.jsp"/>
-    </div>
   </body>
 </html>

@@ -9,6 +9,22 @@
             location.href = "${pageContext.request.contextPath}/hotel";
         }
     </script>
+
+    <div class="row">
+        <c:choose>
+            <c:when test="${updated==true}">
+                <div class="alert alert-success" role="alert">
+                    ${message}
+                </div>
+            </c:when>
+            <c:when test="${updated==false}">
+                <div class="alert alert-danger" role="alert">
+                    ${message}
+                </div>
+            </c:when>
+        </c:choose>
+    </div>
+
     <form:form method="post" action="${pageContext.request.contextPath}/edit-hotel" modelAttribute="hotel">
         <div class="row text-center">
             <h3 class="mt-3">Edit Hotel</h3>
@@ -21,7 +37,19 @@
                             <label path="id">Id</label>
                         </div>
                         <div class="col-lg-6">
-                            <input name="id" id="id" path="id" type="text" class="form-control" value="${hotel.id}" disabled  />
+                            <input name="id" id="id" path="id" type="text" class="form-control" value="${hotel.id}" readonly  />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6 text-center">
+                <fieldset class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label path="email">Email</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input name="email" id="email" path="email" type="email" class="form-control" value="${hotel.email}"   />
                         </div>
                     </div>
                 </fieldset>
@@ -149,7 +177,7 @@
         </div>
         <div class="row m-3">
             <div class="col-md-12 text-center">
-                <button id="btn-back" class="btn btn-secondary" onClick="back()">Back</button>
+                <button id="btn-back" class="btn btn-secondary" type="button" onclick="back()">Back</button>
                 <button type="submit" class="btn btn-primary" >Edit</button>
             </div>
         </div>
