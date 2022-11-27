@@ -1,8 +1,7 @@
-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/SecurityConfig.java
 /Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/model/User.java
 /Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/UserService.java
 /Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/HotelService.java
-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/WebSecurityConfig.java
+/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Configurations/WebSecurityConfig.java
 /Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Repository/UserRepository.java
 /Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/controller/HotelController.java
 /Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/HotelM.java

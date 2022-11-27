@@ -1,0 +1,8 @@
+
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ì¬êûÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úÍ”Üÿÿÿÿÿ
+R
+java:S3655 "7Call "Optional#isPresent()" before accessing the value.(¯¨•Êûÿÿÿÿ
+G
+java:S1172",Remove this unused method parameter "Hotel".(­ì¬êûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ò¾¢ãþÿÿÿÿ

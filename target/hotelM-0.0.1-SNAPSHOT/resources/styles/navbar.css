@@ -1,0 +1,16 @@
+* {margin: 0;padding: 0;}
+ul li {padding: 20px 10px 20px 10px;
+    list-style-type: none;}
+ul li:hover {background-color: #fabb25;
+    }
+ul li a {color: #fff;text-decoration: none;}
+@media only screen and (max-width: 768px) {
+    /*Menu styles*/
+    footer a {
+        color: #ffffff;
+        text-align: center;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+}
