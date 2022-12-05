@@ -1,5 +1,7 @@
 package com.hotel.management.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +9,8 @@ import javax.persistence.*;
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(name = "id")
     private Long id;
 
     public Long getId() {

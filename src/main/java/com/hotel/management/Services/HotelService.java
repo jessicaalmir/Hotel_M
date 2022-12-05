@@ -14,17 +14,14 @@ public class HotelService {
     private HotelRepository hotelRepository;
 
     //Adding new Hotel
-    public boolean saveHotel(Hotel Hotel) {
-//        if(hotelRepository.findById(hotelName).isPresent())
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            hotelRepository.save(Hotel);
-//            return false;
-//        }
-        return false;
+    public boolean saveHotel(Hotel hotel) {
+        try{
+            hotelRepository.save(hotel);
+            return  true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     //update Hotel details
@@ -42,6 +39,16 @@ public class HotelService {
         hotelUpdated.setPetFriendly(hotel.getPetFriendly());
 
         return hotelRepository.save(hotelUpdated);
+    }
+
+    public boolean deleteHotel(Long hotelId){
+        try{
+            hotelRepository.deleteById(hotelId);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     //Find All Hotels

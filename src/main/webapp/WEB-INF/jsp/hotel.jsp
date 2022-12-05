@@ -4,9 +4,16 @@
 
         <jsp:include page="navbar.jsp"/>
 
-      <div class="row text-center">
-        <h3 class="mt-3"> Hotel List</h3>
+      <div class="row text-center mt-5">
+        <h3 class=""> Hotel List</h3>
       </div>
+        <div class="row">
+            <div class="col my-3 px-5">
+                <a href="/new-hotel">
+                    <button class="btn btn-primary" type="submit">Add Hotel</button>
+                </a>
+            </div>
+        </div>
       <div class="row justify-content-md-center">
        <table class="table table-hover table-bordered" style="width:80%">
             <thead>
@@ -31,7 +38,7 @@
                   <div class="d-flex w-100 justify-content-center my-auto">
                     <div class="action-button"><a href="view-hotel/${hotel.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/plus.png" alt="Details" /></a></div>
                     <div class="action-button"><a href="edit-hotel/${hotel.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/edit.png" alt="Details" /></a></div>
-                    <div class="action-button"><a href="delete-hotel?id=${hotel.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/delete.png" alt="Details" /></a></div>
+                    <div class="action-button"><a href="delete-hotel/${hotel.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/delete.png" alt="Details" /></a></div>
                   </div>
                 </td>
               </tr>

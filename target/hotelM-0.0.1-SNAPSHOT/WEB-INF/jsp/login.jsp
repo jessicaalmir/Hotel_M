@@ -47,11 +47,6 @@
               </td>
             </tr>
           </table>
-          <p>Are you not registered yet?</p>
-          <p>
-            Press click to
-            <a href="register.html" class="link-click">Register</a>
-          </p>
         </form>
       </div>
     </div>
