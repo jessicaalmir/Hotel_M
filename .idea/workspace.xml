@@ -9,48 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="eclipse compatible project">
-      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Hotel_M.eml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Hotel_M.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/delete-hotel.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/new-hotel.jsp" afterDir="false" />
+    <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="creating and deleting hotel">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05bc3702ef558c13c75d01a3bf6faf8a558bbd86" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40c1ecd8663807a01a53cb1d7fb1a7a2fc6f2f26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/550cde10645ad73b37861f018145716e5979fd10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/8/582bc84275d5b626d3b0f12b82e66269f2fac2a7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64700e209b7424484b2d90b42977a2eb833c038c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b6215fdb297a9bbe33f00358ce5d76a9e8f9f02" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c57887f956c133f6b3c4a4a782d33ee916a0de24" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/HotelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/video/travel.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/hotel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/hotel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/resources/music/music.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/resources/video/travel.mp4" beforeDir="false" />
     </list>
     <list id="cd82c26c-8f0f-46df-8df8-c9b5af53b083" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +104,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "8e87e862476d518aae6be5069e370506"
+    "spring.configuration.checksum": "f79315e187fbd291a921729c9041adb9"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -323,7 +285,8 @@
       <workItem from="1669508779725" duration="927000" />
       <workItem from="1669678667762" duration="2176000" />
       <workItem from="1670020978307" duration="1985000" />
-      <workItem from="1670184578059" duration="15689000" />
+      <workItem from="1670184578059" duration="15971000" />
+      <workItem from="1670360880549" duration="1667000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1667963108724</created>
@@ -465,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669500287496</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="creating and deleting hotel">
+      <created>1670209434951</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670209434951</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +502,8 @@
     <MESSAGE value="Login change using custom webSecurity Configuration" />
     <MESSAGE value="Hotel edition" />
     <MESSAGE value="eclipse compatible project" />
-    <option name="LAST_COMMIT_MESSAGE" value="eclipse compatible project" />
+    <MESSAGE value="creating and deleting hotel" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating and deleting hotel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

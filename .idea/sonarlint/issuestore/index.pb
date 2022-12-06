@@ -15,3 +15,16 @@ w
 Gsrc/main/java/com/hotel/management/Configurations/WebConfiguration.java,6/1/616421569964163853be9ac174eea9bf98466d40
 x
 Hsrc/main/java/com/hotel/management/Configurations/WebSecurityConfig.java,4/a/4afbd014df1d6c2e1d1bb71f6b83af892283c508
+V
+&src/main/webapp/WEB-INF/jsp/navbar.jsp,5/9/595e0663a4c0a23d0017d85732dfa3736942b2af
+^
+.src/main/java/com/hotel/management/HotelM.java,e/b/eb043e2e75bd9975b385ce9e60b60fee6e5cadae
+q
+Asrc/main/java/com/hotel/management/Repository/UserRepository.java,c/5/c57887f956c133f6b3c4a4a782d33ee916a0de24
+:
+
+.classpath,3/5/354079a72b91a4280407c16a36f47d1986fd85a5
+8
+.project,f/8/f8b41ce76d7b80d2b47e91b5f92c15f00eccf187
+b
+2src/main/java/com/hotel/management/model/User.java,3/4/348384b3f74a07aea531cf7a3c8bcd3531562f30
