@@ -23,14 +23,41 @@
       <form method="post" action="${pageContext.request.contextPath}/checking-add" modelAttribute="checking">
 
         <div class="form-group row">
-          <label  class="col-sm-2 col-form-label">Booking Reference</label>
+          <div class="my-2 row">
+          <label  class="col-sm-2 col-form-label">Booking Reference #</label>
           <div class="col-sm-7">
             <input type="text" class="form-control" name="bookingNumber"
-                   placeholder="Booking Reference">
+                   placeholder="Booking Reference" disabled>
+          </div>
+          </div>
+          <div class="my-2 row">
+            <label  class="col-sm-2 col-form-label">Firstname</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="firstname"
+                     placeholder="Firstname">
+            </div>
+          <label  class="col-sm-2 col-form-label">Lastname</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="lastName"
+                   placeholder="Lastname">
+          </div>
+            <div>
+
+          <div class="my-2 row">
+          <label  class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="email"
+                   placeholder="example@email.com">
+          </div>
+          <label  class="col-sm-2 col-form-label">Phone Number</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="phone"
+                   placeholder="#123456789">
           </div>
         </div>
+        </div>
 
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center my-5">
           <button id="btn-back" class="btn btn-secondary" type="button" onclick="back()">Back</button>
           <button type="submit" class="btn btn-primary" >Save</button>
         </div>
@@ -44,6 +71,7 @@
             <b>Introduce data:</b> make sure your data is right to avoid extra fees.
           </li>
         </ul>
+
       </form>
     </div>
   </div>

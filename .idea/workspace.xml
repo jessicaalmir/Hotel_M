@@ -9,13 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="eclipse compatible project">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/CheckingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking-add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" afterDir="false" />
+    <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="Checking upload v1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/CheckIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Checking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking-add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking.jsp" afterDir="false" />
     </list>
     <list id="cd82c26c-8f0f-46df-8df8-c9b5af53b083" name="New changelist" comment="" />
@@ -91,37 +87,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/jessica/IdeaProjects/Hotel_M/src/main/webapp/WEB-INF/jsp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "8e87e862476d518aae6be5069e370506",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jessica/IdeaProjects/Hotel_M/src/main/webapp/WEB-INF/jsp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8e87e862476d518aae6be5069e370506&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
@@ -318,6 +314,9 @@
       <workItem from="1670184578059" duration="15971000" />
       <workItem from="1670360880549" duration="1667000" />
       <workItem from="1670474213699" duration="1056000" />
+      <workItem from="1670475361823" duration="121000" />
+      <workItem from="1670536011009" duration="1754000" />
+      <workItem from="1670539970697" duration="1268000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1667963108724</created>
@@ -473,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670468596563</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="eclipse compatible project">
+      <created>1670475421300</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1670475421300</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +547,8 @@
     <MESSAGE value="Hotel edition" />
     <MESSAGE value="creating and deleting hotel" />
     <MESSAGE value="eclipse compatible project" />
-    <option name="LAST_COMMIT_MESSAGE" value="eclipse compatible project" />
+    <MESSAGE value="Checking upload v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking upload v1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
