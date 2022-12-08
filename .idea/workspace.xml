@@ -10,40 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="eclipse compatible project">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/CheckIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Hotel_M.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/CheckingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking-add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/HotelM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/HotelM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/HotelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/HotelRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/MyUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role$RoleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role$RoleBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/CheckIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Checking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking.jsp" afterDir="false" />
     </list>
     <list id="cd82c26c-8f0f-46df-8df8-c9b5af53b083" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +36,7 @@
         <option value="com.haulmont.jpb.JpaRepository" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -139,7 +113,8 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "f79315e187fbd291a921729c9041adb9"
+    "spring.configuration.checksum": "8e87e862476d518aae6be5069e370506",
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -174,8 +149,18 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration name="HotelM (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunManager" selected="Spring Boot.HotelM ">
+    <configuration name="All in Hotel_M" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Hotel_M" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelM " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="Hotel_M" />
@@ -286,6 +271,15 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.All in Hotel_M" />
+      <item itemvalue="Spring Boot.HotelM " />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in Hotel_M" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -323,6 +317,7 @@
       <workItem from="1670020978307" duration="1985000" />
       <workItem from="1670184578059" duration="15971000" />
       <workItem from="1670360880549" duration="1667000" />
+      <workItem from="1670474213699" duration="1056000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1667963108724</created>
@@ -471,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670209434951</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="eclipse compatible project">
+      <created>1670468596563</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670468596563</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,24 +539,18 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Login change using custom webSecurity Configuration" />
     <MESSAGE value="Hotel edition" />
-    <MESSAGE value="eclipse compatible project" />
     <MESSAGE value="creating and deleting hotel" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating and deleting hotel" />
+    <MESSAGE value="eclipse compatible project" />
+    <option name="LAST_COMMIT_MESSAGE" value="eclipse compatible project" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="userService.userRepository" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Hotel_M$HotelM_.ic" NAME="HotelM  Coverage Results" MODIFIED="1670473971818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
