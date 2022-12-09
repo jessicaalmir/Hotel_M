@@ -79,6 +79,7 @@ public class BookingController {
     @GetMapping(value = "/new-booking")
     public ModelAndView newHotel(ModelMap model) {
         model.addAttribute("booking", new Booking());
+        model.put("hotelList", hotelService.findAll());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("new-booking");
         return modelAndView;
@@ -109,7 +110,6 @@ public class BookingController {
         model.addAttribute("bookingId",bookingId);
         Optional<Booking> booking = bookingService.findById(bookingId);
         model.put("booking", booking.orElse(null));
-
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("delete-booking");
         return modelAndView;

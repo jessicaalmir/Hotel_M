@@ -8,14 +8,37 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
     <script type="text/javascript">
+
         function back () {
             location.href = "${pageContext.request.contextPath}/booking";
         }
-                $(function () {
-                       $(".datepicker").datepicker({
-                        dateFormat: 'yy-mm-dd'
-                });
+
+        $(document).ready(function() {
+            jQuery("#startDate").datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true,
+                minDate: 0,
+                maxDate: "+60D",
+                 numberOfMonths: 2,
+                onSelect: function( selectedDate ) {
+                console.log("Hello");
+                jQuery( "#endDate" ).datepicker( "option", "minDate", selectedDate );
+                }
+            });
+            jQuery("#endDate").datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true,
+                minDate: 0,
+                maxDate: "+60D",
+                 numberOfMonths: 2,
+                onSelect: function( selectedDate ) {
+                jQuery( "#startDate" ).datepicker( "option", "maxDate", selectedDate );
+                }
+            });
         });
+
     </script>
 
 
@@ -44,10 +67,14 @@
                     <fieldset class="form-group">
                         <div class="row">
                             <div class="col-lg-4">
-                                <label path="HotelId">Hotel Id</label>
+                                <label path="hotelId">Hotel Id*</label>
                             </div>
                             <div class="col-lg-6">
-                                <input name="HotelId" id="HotelId" path="HotelId" type="text" class="form-control"   />
+                                <select name="hotelId" id="hotelId" path="hotelId" class="form-control">
+                                    <c:forEach items="${hotelList}" var="hotel">
+                                        <option value="${hotel.id}">${hotel.id}</option>
+                                    </c:forEach>
+                                </select>
                             </div>
                         </div>
                     </fieldset>
@@ -60,10 +87,10 @@
                                 <fieldset class="form-group">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <label path="roomId">Room Id</label>
+                                            <label path="roomId">Room Id*</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input name="roomId" id="roomId" path="roomId" type="text" class="form-control"   />
+                                            <input name="roomId" id="roomId" path="roomId" type="text" class="form-control"  required />
                                         </div>
                                     </div>
                                 </fieldset>
@@ -73,10 +100,10 @@
                                 <fieldset class="form-group">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <label path="clientId">Client Id</label>
+                                            <label path="clientId">Client Id*</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input name="clientId" id="clientId" path="clientId" type="text" class="form-control"   />
+                                            <input name="clientId" id="clientId" path="clientId" type="text" class="form-control"  required />
                                         </div>
                                     </div>
                                 </fieldset>
@@ -90,10 +117,10 @@
                                             <fieldset class="form-group">
                                                 <div class="row">
                                                     <div class="col-lg-4">
-                                                        <label for="datepicker" path="startDate">Start Date</label>
+                                                        <label for="datepicker" path="startDate">Start Date*</label>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <input type="text" name="startDate" id="startDate" class="form-control datepicker">
+                                                        <input type="text" name="startDate" id="startDate" class="form-control datepicker" required>
                                                     </div>
                                                 </div>
                                             </fieldset>
@@ -106,7 +133,7 @@
                                                         <label for="datepicker" path="endDate">End Date</label>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <input type="text" name="endDate" id="endDate" class="form-control datepicker">
+                                                        <input type="text" name="endDate" id="endDate" class="form-control datepicker" required>
                                                     </div>
                                                 </div>
                                             </fieldset>

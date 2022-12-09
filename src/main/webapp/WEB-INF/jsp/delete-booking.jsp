@@ -110,7 +110,7 @@
 
     <div class="row m-3">
         <div class="col-md-12 text-center">
-            <button id="btn-back" class="btn btn-primary" onClick="back()">Cancel</button>
+            <button id="btn-back" type="button" class="btn btn-primary" onClick="back()">Cancel</button>
             <button type="submit" class="btn btn-danger">Delete</button>
         </div>
     </div>
