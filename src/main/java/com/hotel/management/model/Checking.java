@@ -24,9 +24,6 @@ public class Checking {
         @Column(name = "lastName")
         private String lastName;
 
-        @Column(name = "bookingNumber")
-        private String bookingNumber;
-
         public String getLastName() {
             return lastName;
         }
@@ -35,13 +32,6 @@ public class Checking {
             this.lastName = lastName;
         }
 
-        public String getBookingNumber() {
-            return bookingNumber;
-        }
-
-        public void setBookingNumber(String bookingNumber) {
-            this.bookingNumber = bookingNumber;
-        }
 
         @Column(name = "email")
         private String email;

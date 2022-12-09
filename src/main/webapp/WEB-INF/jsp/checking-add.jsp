@@ -5,6 +5,9 @@
   Time: 22:31
   To change this template use File | Settings | File Templates.
 --%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="navbar.jsp"/>
 
@@ -14,13 +17,28 @@
   }
 </script>
 
+<div class="row">
+  <c:choose>
+    <c:when test="${created==true}">
+      <div class="alert alert-success" role="alert">
+          ${message}
+      </div>
+    </c:when>
+    <c:when test="${created==false}">
+      <div class="alert alert-danger" role="alert">
+          ${message}
+      </div>
+    </c:when>
+  </c:choose>
+</div>
+
 <div class="container">
   <div class="row text-center mt-2">
     <h2>Check In process</h2>
   </div>
   <div class="card">
     <div class="card-body">
-      <form method="post" action="${pageContext.request.contextPath}/checking-add" modelAttribute="checking">
+      <form:form method="post" action="${pageContext.request.contextPath}/checking-add" modelAttribute="checking">
 
         <div class="form-group row">
           <div class="my-2 row">
@@ -33,12 +51,12 @@
           <div class="my-2 row">
             <label  class="col-sm-2 col-form-label">Firstname</label>
             <div class="col-sm-4">
-              <input type="text" class="form-control" name="firstname"
+              <input type="text" class="form-control" name="firstName" id="firstName" path="firstName"
                      placeholder="Firstname">
             </div>
           <label  class="col-sm-2 col-form-label">Lastname</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" name="lastName"
+            <input type="text" class="form-control" id="lastName" path="lastName" name="lastName"
                    placeholder="Lastname">
           </div>
             <div>
@@ -46,12 +64,12 @@
           <div class="my-2 row">
           <label  class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" name="email"
+            <input name="email" id="email" path="email" type="text" class="form-control"
                    placeholder="example@email.com">
           </div>
           <label  class="col-sm-2 col-form-label">Phone Number</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" name="phone"
+            <input type="text" class="form-control" name="phone" id="phone" path="phone"
                    placeholder="#123456789">
           </div>
         </div>
@@ -72,7 +90,7 @@
           </li>
         </ul>
 
-      </form>
+      </form:form>
     </div>
   </div>
 </div>

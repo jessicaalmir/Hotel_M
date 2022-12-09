@@ -1,6 +1,6 @@
 package com.hotel.management.controller;
 
-import com.hotel.management.Services.HotelService;
+import com.hotel.management.Services.CheckingService;
 import com.hotel.management.model.Checking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,11 +17,11 @@ import javax.validation.Valid;
 public class CheckInController {
 
     @Autowired
-    private HotelService hotelService;
+    private CheckingService checkingService;
 
     @GetMapping(value = "/checking")
     public ModelAndView checking(ModelMap model) {
-        model.put("hotels", hotelService.findAll());
+
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("checking");
         return modelAndView;
@@ -44,14 +44,14 @@ public class CheckInController {
             model.put("message","Error on checkin process, please review and try again!");
             return modelAndView;
         }
-       /* Boolean wasCreated = CheckingService.saveChecking(checking);
+       Boolean wasCreated = checkingService.saveChecking(checking);
         if(wasCreated==true){
             model.put("created",true);
             model.put("message","Checked successfully!");
         }else{
             model.put("created",false);
             model.put("message","Error creating checkin, please review and try again!");
-        }*/
+        }
         return modelAndView;
     }
 }
