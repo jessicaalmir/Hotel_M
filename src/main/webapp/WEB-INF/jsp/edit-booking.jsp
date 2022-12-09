@@ -129,7 +129,7 @@
                                                         <label for="datepicker" path="startDate">Start Date</label>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <input type="date" name="startDate" id="startDate" class="form-control datepicker" value="${booking.startDate}">
+                                                        <input type="date" name="startDate" id="startDate" class="form-control datepicker" value="${booking.startDate}" required>
                                                     </div>
                                                 </div>
                                             </fieldset>
@@ -142,7 +142,7 @@
                                                         <label for="datepicker" path="endDate">End Date</label>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <input type="date" name="endDate" id="endDate" class="form-control datepicker" value="${booking.endDate}">
+                                                        <input type="date" name="endDate" id="endDate" class="form-control datepicker" value="${booking.endDate}" required>
                                                     </div>
                                                 </div>
                                             </fieldset>
