@@ -1,0 +1,84 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]" date="1670269680722" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2022-12-05 2:47 p.m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Repository/UserRepository.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Repository/UserRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/UserRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/model/User$UserBuilder.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/model/User$UserBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/User$UserBuilder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/HotelM.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/HotelM.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelM.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/controller/HotelController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/controller/HotelController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Configurations/WebConfiguration.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Configurations/WebConfiguration.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/WebConfiguration.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/controller/HomeController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/controller/HomeController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HomeController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/model/Role$RoleBuilder.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/model/Role$RoleBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/Role$RoleBuilder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Services/MyUserDetailsService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Services/MyUserDetailsService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/MyUserDetailsService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Services/UserService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Services/UserService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/UserService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Configurations/WebSecurityConfig.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Configurations/WebSecurityConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/WebSecurityConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Services/HotelService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Services/HotelService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/model/User.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/model/User.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/User.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/model/Hotel.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/model/Hotel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/Hotel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Repository/RoleRepository.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Repository/RoleRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/RoleRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/Repository/HotelRepository.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/Repository/HotelRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/hotel/management/model/Role.class" />
+    <option name="AFTER_PATH" value="target/classes/com/hotel/management/model/Role.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/Role.class" />
+  </binary>
+</changelist>

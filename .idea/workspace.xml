@@ -9,10 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="creating and deleting hotel">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="Checking upload v1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Repository/CheckingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/Repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Repository/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/CheckingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/CheckingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Checking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checking-add.jsp" afterDir="false" />
     </list>
     <list id="cd82c26c-8f0f-46df-8df8-c9b5af53b083" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +38,7 @@
         <option value="com.haulmont.jpb.JpaRepository" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -86,32 +93,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/jessica/IdeaProjects/Hotel_M/src/main/webapp/WEB-INF/jsp",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "f79315e187fbd291a921729c9041adb9"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jessica/IdeaProjects/Hotel_M/src/main/webapp/WEB-INF/jsp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8e87e862476d518aae6be5069e370506&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
@@ -139,10 +151,21 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration name="HotelM (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ACTIVE_PROFILES" />
-      <module name="hotelM" />
+  <component name="RunManager" selected="Spring Boot.HotelM ">
+    <configuration name="All in Hotel_M" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Hotel_M" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelM " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="Hotel_M" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hotel.management.HotelM" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -250,6 +273,15 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.All in Hotel_M" />
+      <item itemvalue="Spring Boot.HotelM " />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in Hotel_M" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -287,6 +319,10 @@
       <workItem from="1670020978307" duration="1985000" />
       <workItem from="1670184578059" duration="15971000" />
       <workItem from="1670360880549" duration="1667000" />
+      <workItem from="1670474213699" duration="1056000" />
+      <workItem from="1670475361823" duration="121000" />
+      <workItem from="1670536011009" duration="1754000" />
+      <workItem from="1670539970697" duration="8234000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1667963108724</created>
@@ -435,7 +471,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670209434951</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="eclipse compatible project">
+      <created>1670468596563</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670468596563</updated>
+    </task>
+    <task id="LOCAL-00023" summary="eclipse compatible project">
+      <created>1670475421300</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1670475421300</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Checking upload v1">
+      <created>1670541407433</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670541407433</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,24 +558,19 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Login change using custom webSecurity Configuration" />
     <MESSAGE value="Hotel edition" />
-    <MESSAGE value="eclipse compatible project" />
     <MESSAGE value="creating and deleting hotel" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating and deleting hotel" />
+    <MESSAGE value="eclipse compatible project" />
+    <MESSAGE value="Checking upload v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking upload v1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="userService.userRepository" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Hotel_M$HotelM_.ic" NAME="HotelM  Coverage Results" MODIFIED="1670473971818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
