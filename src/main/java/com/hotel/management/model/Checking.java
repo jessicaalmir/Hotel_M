@@ -1,5 +1,4 @@
 package com.hotel.management.model;
-
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
