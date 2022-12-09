@@ -1,0 +1,676 @@
+Index: src/main/java/com/hotel/management/model/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.hotel.management.model;\r\n\r\nimport lombok.*;\r\nimport org.hibernate.validator.constraints.Length;\r\n\r\nimport javax.persistence.*;\r\nimport javax.validation.constraints.Email;\r\nimport javax.validation.constraints.NotEmpty;\r\nimport java.util.Set;\r\n\r\n@Data\r\n@Builder\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n@Entity\r\n@Setter\r\n@Getter\r\n@Table(name = \"users\")\r\npublic class User {\r\n   @Id\r\n   @GeneratedValue(strategy = GenerationType.AUTO)\r\n   @Column(name = \"user_id\")\r\n   private int id;\r\n    @Column(name = \"user_name\")\r\n    @Length(min = 5, message = \"*Your user name must have at least 5 characters\")\r\n    @NotEmpty(message = \"*Please provide a user name\")\r\n    private String userName;\r\n    @Column(name = \"email\")\r\n    @Email(message = \"*Please provide a valid Email\")\r\n    @NotEmpty(message = \"*Please provide an email\")\r\n    private String email;\r\n    @Column(name = \"password\")\r\n    @Length(min = 5, message = \"*Your password must have at least 5 characters\")\r\n    @NotEmpty(message = \"*Please provide your password\")\r\n    private String password;\r\n    @Column(name = \"name\")\r\n    @NotEmpty(message = \"*Please provide your name\")\r\n    private String name;\r\n    @Column(name = \"last_name\")\r\n    @NotEmpty(message = \"*Please provide your last name\")\r\n    private String lastName;\r\n    @Column(name = \"active\")\r\n    private Boolean active;\r\n    @ManyToMany(cascade = CascadeType.MERGE)\r\n    @JoinTable(name = \"user_role\", joinColumns = @JoinColumn(name = \"user_id\"), inverseJoinColumns = @JoinColumn(name = \"role_id\"))\r\n    private Set<Role> roles;\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/hotel/management/model/User.java b/src/main/java/com/hotel/management/model/User.java
+--- a/src/main/java/com/hotel/management/model/User.java	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/src/main/java/com/hotel/management/model/User.java	(date 1670351281812)
+@@ -1,6 +1,9 @@
+ package com.hotel.management.model;
+ 
+-import lombok.*;
++import lombok.AllArgsConstructor;
++import lombok.Builder;
++import lombok.Data;
++import lombok.NoArgsConstructor;
+ import org.hibernate.validator.constraints.Length;
+ 
+ import javax.persistence.*;
+@@ -13,10 +16,85 @@
+ @AllArgsConstructor
+ @NoArgsConstructor
+ @Entity
+-@Setter
+-@Getter
+ @Table(name = "users")
+ public class User {
++   /* @Id
++    @Column(name = "id", nullable = false)
++    private String id;
++    @Column(name = "active")
++    private boolean active;
++
++    public User() {
++
++    }
++
++    public User(String id, String email, String password, String name, String lastName) {
++        this.id = id;
++        this.email = email;
++        this.password = password;
++        this.name = name;
++        this.lastName = lastName;
++    }
++
++    public String getId() {
++        return id;
++    }
++
++    public void setId(String id) {
++        this.id = id;
++    }
++
++    @Column(name = "email")
++    private String email;
++
++    public String getEmail() {
++        return email;
++    }
++
++    public void setEmail(String email) {
++        this.email = email;
++    }
++
++    @Column(name = "password")
++    private String password;
++
++    public String getPassword() {
++        return password;
++    }
++
++    public void setPassword(String password) {
++        this.password = password;
++    }
++
++    @Column(name = "name")
++    private String name;
++
++    public String getName() {
++        return name;
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    @Column(name = "last_name")
++    private String lastName;
++
++    public String getLastName() {
++        return lastName;
++    }
++
++    public void setLastName(String lastName) {
++        this.lastName = lastName;
++    }
++
++    public boolean getActive() {
++        return active;
++    }
++
++    public void setActive(boolean active) {
++        this.active = active;
++    }*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
+@@ -44,6 +122,55 @@
+     @ManyToMany(cascade = CascadeType.MERGE)
+     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+     private Set<Role> roles;
++	public int getId() {
++		return id;
++	}
++	public void setId(int id) {
++		this.id = id;
++	}
++	public String getUserName() {
++		return userName;
++	}
++	public void setUserName(String userName) {
++		this.userName = userName;
++	}
++	public String getEmail() {
++		return email;
++	}
++	public void setEmail(String email) {
++		this.email = email;
++	}
++	public String getPassword() {
++		return password;
++	}
++	public void setPassword(String password) {
++		this.password = password;
++	}
++	public String getName() {
++		return name;
++	}
++	public void setName(String name) {
++		this.name = name;
++	}
++	public String getLastName() {
++		return lastName;
++	}
++	public void setLastName(String lastName) {
++		this.lastName = lastName;
++	}
++	public Boolean getActive() {
++		return active;
++	}
++	public void setActive(Boolean active) {
++		this.active = active;
++	}
++	public Set<Role> getRoles() {
++		return roles;
++	}
++	public void setRoles(Set<Role> roles) {
++		this.roles = roles;
++
++	}
+ 
+ 
+ }
+\ No newline at end of file
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server.port=8080\r\nspring.mvc.view.prefix=/WEB-INF/jsp/\r\nspring.mvc.view.suffix=.jsp\r\n\r\nspring.jpa.generate-ddl=true\r\nspring.jpa.properties.hibernate.format_sql=true\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect\r\n\r\nspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\r\nspring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false\r\nspring.datasource.username=jessica\r\nspring.datasource.password=Valledupar123\r\nspring.jpa.show-sql=true\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/src/main/resources/application.properties	(date 1670362490817)
+@@ -8,8 +8,8 @@
+ 
+ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false
+-spring.datasource.username=jessica
+-spring.datasource.password=Valledupar123
++spring.datasource.username=root
++spring.datasource.password=root
+ spring.jpa.show-sql=true
+ spring.jpa.hibernate.ddl-auto=update
+ 
+Index: target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server.port=8080\r\nspring.mvc.view.prefix=/WEB-INF/jsp/\r\nspring.mvc.view.suffix=.jsp\r\n\r\nspring.jpa.generate-ddl=true\r\nspring.jpa.properties.hibernate.format_sql=true\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect\r\n\r\nspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\r\nspring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false\r\nspring.datasource.username=jessica\r\nspring.datasource.password=Valledupar123\r\nspring.jpa.show-sql=true\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/classes/application.properties b/target/classes/application.properties
+--- a/target/classes/application.properties	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/target/classes/application.properties	(date 1670364603915)
+@@ -8,8 +8,8 @@
+ 
+ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false
+-spring.datasource.username=jessica
+-spring.datasource.password=Valledupar123
++spring.datasource.username=root
++spring.datasource.password=root
+ spring.jpa.show-sql=true
+ spring.jpa.hibernate.ddl-auto=update
+ 
+Index: target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/model/User.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/UserService.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/HotelService.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Configurations/WebSecurityConfig.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Repository/UserRepository.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/controller/HotelController.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/HotelM.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Repository/HotelRepository.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Configurations/WebConfiguration.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/MyUserDetailsService.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/model/Hotel.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/controller/HomeController.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Repository/RoleRepository.java\r\n/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/model/Role.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1670364430390)
+@@ -1,14 +1,14 @@
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/model/User.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/UserService.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/HotelService.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Configurations/WebSecurityConfig.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Repository/UserRepository.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/controller/HotelController.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/HotelM.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Repository/HotelRepository.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Configurations/WebConfiguration.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Services/MyUserDetailsService.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/model/Hotel.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/controller/HomeController.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/Repository/RoleRepository.java
+-/Users/jessica/IdeaProjects/Hotel_M/src/main/java/com/hotel/management/model/Role.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\controller\HotelController.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\model\Role.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\model\User.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Services\UserService.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Services\HotelService.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\HotelM.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Configurations\WebSecurityConfig.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Services\MyUserDetailsService.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Repository\HotelRepository.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Repository\RoleRepository.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Repository\UserRepository.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\model\Hotel.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\controller\HomeController.java
++C:\Users\User\eclipse-workspace\Hotel_M\src\main\java\com\hotel\management\Configurations\WebConfiguration.java
+Index: target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>com/hotel/management/model/Hotel.class\r\ncom/hotel/management/Repository/UserRepository.class\r\ncom/hotel/management/model/User.class\r\ncom/hotel/management/model/User$UserBuilder.class\r\ncom/hotel/management/model/Role.class\r\ncom/hotel/management/Configurations/WebConfiguration.class\r\ncom/hotel/management/controller/HotelController.class\r\ncom/hotel/management/Repository/HotelRepository.class\r\ncom/hotel/management/Configurations/WebSecurityConfig.class\r\ncom/hotel/management/Services/UserService.class\r\ncom/hotel/management/HotelM.class\r\ncom/hotel/management/controller/HomeController.class\r\ncom/hotel/management/Services/HotelService.class\r\ncom/hotel/management/Services/MyUserDetailsService.class\r\ncom/hotel/management/Repository/RoleRepository.class\r\ncom/hotel/management/model/Role$RoleBuilder.class\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1670364328850)
+@@ -1,16 +1,16 @@
+-com/hotel/management/model/Hotel.class
+-com/hotel/management/Repository/UserRepository.class
+-com/hotel/management/model/User.class
+-com/hotel/management/model/User$UserBuilder.class
+-com/hotel/management/model/Role.class
+-com/hotel/management/Configurations/WebConfiguration.class
+-com/hotel/management/controller/HotelController.class
+-com/hotel/management/Repository/HotelRepository.class
+-com/hotel/management/Configurations/WebSecurityConfig.class
+-com/hotel/management/Services/UserService.class
+-com/hotel/management/HotelM.class
+-com/hotel/management/controller/HomeController.class
+-com/hotel/management/Services/HotelService.class
+-com/hotel/management/Services/MyUserDetailsService.class
+-com/hotel/management/Repository/RoleRepository.class
+-com/hotel/management/model/Role$RoleBuilder.class
++com\hotel\management\Services\UserService.class
++com\hotel\management\Repository\RoleRepository.class
++com\hotel\management\HotelM.class
++com\hotel\management\controller\HotelController.class
++com\hotel\management\model\User.class
++com\hotel\management\Configurations\WebSecurityConfig.class
++com\hotel\management\Services\MyUserDetailsService.class
++com\hotel\management\model\Role$RoleBuilder.class
++com\hotel\management\model\Hotel.class
++com\hotel\management\Configurations\WebConfiguration.class
++com\hotel\management\model\Role.class
++com\hotel\management\Repository\UserRepository.class
++com\hotel\management\model\User$UserBuilder.class
++com\hotel\management\Repository\HotelRepository.class
++com\hotel\management\Services\HotelService.class
++com\hotel\management\controller\HomeController.class
+Index: target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server.port=8080\r\nspring.mvc.view.prefix=/WEB-INF/jsp/\r\nspring.mvc.view.suffix=.jsp\r\n\r\nspring.jpa.generate-ddl=true\r\nspring.jpa.properties.hibernate.format_sql=true\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect\r\n\r\nspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\r\nspring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false\r\nspring.datasource.username=jessica\r\nspring.datasource.password=Valledupar123\r\nspring.jpa.show-sql=true\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties b/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties
+--- a/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties	(date 1670364325287)
+@@ -8,8 +8,8 @@
+ 
+ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false
+-spring.datasource.username=jessica
+-spring.datasource.password=Valledupar123
++spring.datasource.username=root
++spring.datasource.password=root
+ spring.jpa.show-sql=true
+ spring.jpa.hibernate.ddl-auto=update
+ 
+Index: .classpath
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<classpath>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/1.8\"/>\r\n\t<classpathentry kind=\"src\" path=\"src/main/java\"/>\r\n\t<classpathentry kind=\"src\" path=\"src/main/resources\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-aop:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.aspectj:aspectjweaver:1.9.7\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-jdbc:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.zaxxer:HikariCP:4.0.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-jdbc:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: jakarta.transaction:jakarta.transaction-api:1.3.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: jakarta.persistence:jakarta.persistence-api:2.2.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.data:spring-data-jpa:2.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.data:spring-data-commons:2.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-orm:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.slf4j:slf4j-api:1.7.36\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-aspects:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-web:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-logging:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: ch.qos.logback:logback-classic:1.2.11\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: ch.qos.logback:logback-core:1.2.11\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.logging.log4j:log4j-to-slf4j:2.17.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.logging.log4j:log4j-api:2.17.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.slf4j:jul-to-slf4j:1.7.36\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: jakarta.annotation:jakarta.annotation-api:1.3.5\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.yaml:snakeyaml:1.30\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-json:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.65\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-web:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-webmvc:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: javax.servlet:jstl:1.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.tomcat.embed:tomcat-embed-jasper:9.0.65\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.65\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.tomcat:tomcat-annotations-api:9.0.65\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.65\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.eclipse.jdt:ecj:3.18.0\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: javax.xml.bind:jaxb-api:2.3.1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: javax.activation:javax.activation-api:1.2.0\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-devtools:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-test:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-test:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.jayway.jsonpath:json-path:2.7.0\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: net.minidev:json-smart:2.4.8\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: net.minidev:accessors-smart:2.4.8\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.ow2.asm:asm:9.1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: jakarta.activation:jakarta.activation-api:1.2.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.assertj:assertj-core:3.22.0\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.hamcrest:hamcrest:2.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.junit.jupiter:junit-jupiter:5.8.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.junit.jupiter:junit-jupiter-api:5.8.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.opentest4j:opentest4j:1.2.0\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.junit.platform:junit-platform-commons:1.8.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.apiguardian:apiguardian-api:1.1.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.junit.jupiter:junit-jupiter-params:5.8.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.junit.platform:junit-platform-engine:1.8.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.mockito:mockito-core:4.5.1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: net.bytebuddy:byte-buddy-agent:1.12.17\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.objenesis:objenesis:3.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.mockito:mockito-junit-jupiter:4.5.1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.skyscreamer:jsonassert:1.5.1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-core:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-jcl:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-test:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.xmlunit:xmlunit-core:2.9.0\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: mysql:mysql-connector-java:8.0.30\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-validation:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate.validator:hibernate-validator:6.2.5.Final\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: jakarta.validation:jakarta.validation-api:2.0.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate:hibernate-core:5.6.11.Final\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss.logging:jboss-logging:3.4.3.Final\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: net.bytebuddy:byte-buddy:1.12.17\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: antlr:antlr:2.7.7\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss:jandex:2.4.2.Final\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml:classmate:1.5.1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.glassfish.jaxb:jaxb-runtime:2.3.6\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.glassfish.jaxb:txw2:2.3.6\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.sun.istack:istack-commons-runtime:3.0.12\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.sun.activation:jakarta.activation:1.2.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate:hibernate-entitymanager:5.6.11.Final\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: javax.persistence:javax.persistence-api:2.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-tx:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-beans:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-security:2.7.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-aop:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-config:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-web:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-test:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-core:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-crypto:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: junit:junit:4.12\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.hamcrest:hamcrest-core:2.2\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.projectlombok:lombok:1.18.22\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-taglibs:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-acl:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-context:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-expression:5.3.23\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-oauth2-authorization-server:0.3.1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-oauth2-core:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-oauth2-jose:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.security:spring-security-oauth2-resource-server:5.7.3\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.nimbusds:nimbus-jose-jwt:9.22\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.4\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-core:2.13.4\"/>\r\n\t<classpathentry kind=\"output\" path=\"target/classes\"/>\r\n</classpath>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.classpath b/.classpath
+--- a/.classpath	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/.classpath	(date 1670364305686)
+@@ -1,8 +1,34 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <classpath>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/1.8"/>
+-	<classpathentry kind="src" path="src/main/java"/>
+-	<classpathentry kind="src" path="src/main/resources"/>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/classes" path="src/main/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="test" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.7.4"/>
+ 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework.boot:spring-boot-starter-aop:2.7.4"/>
+ 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.aspectj:aspectjweaver:1.9.7"/>
+@@ -117,5 +143,10 @@
+ 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4"/>
+ 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.4"/>
+ 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-core:2.13.4"/>
++	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
++		<attributes>
++			<attribute name="owner.project.facets" value="jst.web"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+-</classpath>
+\ No newline at end of file
++</classpath>
+Index: src/main/java/com/hotel/management/model/Role.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.hotel.management.model;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Builder;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\nimport javax.persistence.*;\r\n\r\n@Data\r\n@Builder\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n@Entity\r\n@Table(name = \"roles\")\r\npublic class Role {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    @Column(name = \"role_id\")\r\n    private int id;\r\n    @Column(name = \"role\")\r\n    private String role;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/hotel/management/model/Role.java b/src/main/java/com/hotel/management/model/Role.java
+--- a/src/main/java/com/hotel/management/model/Role.java	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/src/main/java/com/hotel/management/model/Role.java	(date 1670351185534)
+@@ -20,4 +20,17 @@
+     private int id;
+     @Column(name = "role")
+     private String role;
+-}
++	public int getId() {
++		return id;
++	}
++	public void setId(int id) {
++		this.id = id;
++	}
++	public String getRole() {
++		return role;
++	}
++	public void setRole(String role) {
++		this.role = role;
++	}
++
++}
+\ No newline at end of file
+Index: .idea/Hotel_M.eml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<component LANGUAGE_LEVEL=\"JDK_1_8\" jdk=\"1.8\" jdk_type=\"JavaSDK\">\r\n\t<output-test url=\"file://$MODULE_DIR$/target/test-classes\"/>\r\n\t<contentEntry url=\"file://$MODULE_DIR$\">\r\n\t\t<excludeFolder url=\"file://$MODULE_DIR$/target\"/>\r\n\t</contentEntry>\r\n\t<lib name=\"Maven: org.springframework.boot:spring-boot-devtools:2.7.4\" scope=\"RUNTIME\"/>\r\n\t<lib name=\"Maven: org.springframework.boot:spring-boot-starter-test:2.7.4\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.springframework.boot:spring-boot-test:2.7.4\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.4\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: com.jayway.jsonpath:json-path:2.7.0\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: net.minidev:json-smart:2.4.8\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: net.minidev:accessors-smart:2.4.8\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.ow2.asm:asm:9.1\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.assertj:assertj-core:3.22.0\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.hamcrest:hamcrest:2.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.junit.jupiter:junit-jupiter:5.8.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.junit.jupiter:junit-jupiter-api:5.8.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.opentest4j:opentest4j:1.2.0\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.junit.platform:junit-platform-commons:1.8.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.apiguardian:apiguardian-api:1.1.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.junit.jupiter:junit-jupiter-params:5.8.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.junit.platform:junit-platform-engine:1.8.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.mockito:mockito-core:4.5.1\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: net.bytebuddy:byte-buddy-agent:1.12.17\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.objenesis:objenesis:3.2\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.mockito:mockito-junit-jupiter:4.5.1\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.skyscreamer:jsonassert:1.5.1\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.springframework:spring-test:5.3.23\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.xmlunit:xmlunit-core:2.9.0\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: com.sun.activation:jakarta.activation:1.2.2\" scope=\"RUNTIME\"/>\r\n\t<lib name=\"Maven: org.springframework.security:spring-security-test:5.7.3\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: junit:junit:4.12\" scope=\"TEST\"/>\r\n\t<lib name=\"Maven: org.hamcrest:hamcrest-core:2.2\" scope=\"TEST\"/>\r\n\t<levels>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-aop:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.aspectj:aspectjweaver:1.9.7\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-jdbc:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.zaxxer:HikariCP:4.0.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-jdbc:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: jakarta.transaction:jakarta.transaction-api:1.3.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: jakarta.persistence:jakarta.persistence-api:2.2.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.data:spring-data-jpa:2.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.data:spring-data-commons:2.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-orm:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.slf4j:slf4j-api:1.7.36\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-aspects:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-web:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-logging:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: ch.qos.logback:logback-classic:1.2.11\" value=\"project\"/>\r\n\t\t<level name=\"Maven: ch.qos.logback:logback-core:1.2.11\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apache.logging.log4j:log4j-to-slf4j:2.17.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apache.logging.log4j:log4j-api:2.17.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.slf4j:jul-to-slf4j:1.7.36\" value=\"project\"/>\r\n\t\t<level name=\"Maven: jakarta.annotation:jakarta.annotation-api:1.3.5\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.yaml:snakeyaml:1.30\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-json:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.65\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-web:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-webmvc:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: javax.servlet:jstl:1.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apache.tomcat.embed:tomcat-embed-jasper:9.0.65\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.65\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apache.tomcat:tomcat-annotations-api:9.0.65\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.65\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.eclipse.jdt:ecj:3.18.0\" value=\"project\"/>\r\n\t\t<level name=\"Maven: javax.xml.bind:jaxb-api:2.3.1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: javax.activation:javax.activation-api:1.2.0\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-devtools:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-test:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-test:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.jayway.jsonpath:json-path:2.7.0\" value=\"project\"/>\r\n\t\t<level name=\"Maven: net.minidev:json-smart:2.4.8\" value=\"project\"/>\r\n\t\t<level name=\"Maven: net.minidev:accessors-smart:2.4.8\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.ow2.asm:asm:9.1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: jakarta.activation:jakarta.activation-api:1.2.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.assertj:assertj-core:3.22.0\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.hamcrest:hamcrest:2.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.junit.jupiter:junit-jupiter:5.8.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.junit.jupiter:junit-jupiter-api:5.8.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.opentest4j:opentest4j:1.2.0\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.junit.platform:junit-platform-commons:1.8.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.apiguardian:apiguardian-api:1.1.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.junit.jupiter:junit-jupiter-params:5.8.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.junit.platform:junit-platform-engine:1.8.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.mockito:mockito-core:4.5.1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: net.bytebuddy:byte-buddy-agent:1.12.17\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.objenesis:objenesis:3.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.mockito:mockito-junit-jupiter:4.5.1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.skyscreamer:jsonassert:1.5.1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-core:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-jcl:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-test:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.xmlunit:xmlunit-core:2.9.0\" value=\"project\"/>\r\n\t\t<level name=\"Maven: mysql:mysql-connector-java:8.0.30\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-validation:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.hibernate.validator:hibernate-validator:6.2.5.Final\" value=\"project\"/>\r\n\t\t<level name=\"Maven: jakarta.validation:jakarta.validation-api:2.0.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.hibernate:hibernate-core:5.6.11.Final\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.jboss.logging:jboss-logging:3.4.3.Final\" value=\"project\"/>\r\n\t\t<level name=\"Maven: net.bytebuddy:byte-buddy:1.12.17\" value=\"project\"/>\r\n\t\t<level name=\"Maven: antlr:antlr:2.7.7\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.jboss:jandex:2.4.2.Final\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.fasterxml:classmate:1.5.1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.glassfish.jaxb:jaxb-runtime:2.3.6\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.glassfish.jaxb:txw2:2.3.6\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.sun.istack:istack-commons-runtime:3.0.12\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.sun.activation:jakarta.activation:1.2.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.hibernate:hibernate-entitymanager:5.6.11.Final\" value=\"project\"/>\r\n\t\t<level name=\"Maven: javax.persistence:javax.persistence-api:2.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-tx:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-beans:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.boot:spring-boot-starter-security:2.7.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-aop:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-config:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-web:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-test:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-core:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-crypto:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: junit:junit:4.12\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.hamcrest:hamcrest-core:2.2\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.projectlombok:lombok:1.18.22\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-taglibs:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-acl:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-context:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework:spring-expression:5.3.23\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-oauth2-authorization-server:0.3.1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-oauth2-core:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-oauth2-jose:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: org.springframework.security:spring-security-oauth2-resource-server:5.7.3\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.nimbusds:nimbus-jose-jwt:9.22\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.4\" value=\"project\"/>\r\n\t\t<level name=\"Maven: com.fasterxml.jackson.core:jackson-core:2.13.4\" value=\"project\"/>\r\n\t</levels>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Hotel_M.eml b/.idea/Hotel_M.eml
+--- a/.idea/Hotel_M.eml	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/.idea/Hotel_M.eml	(date 1670357398995)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<component LANGUAGE_LEVEL="JDK_1_8" jdk="1.8" jdk_type="JavaSDK">
++<component LANGUAGE_LEVEL="JDK_1_8" inheritJdk="true">
+ 	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+ 	<contentEntry url="file://$MODULE_DIR$">
+ 		<excludeFolder url="file://$MODULE_DIR$/target"/>
+Index: .project
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<projectDescription>\r\n\t<name>Hotel_M</name>\r\n\t<comment/>\r\n\t<projects/>\r\n\t<buildSpec>\r\n\t\t<buildCommand>\r\n\t\t\t<name>org.eclipse.jdt.core.javabuilder</name>\r\n\t\t\t<arguments/>\r\n\t\t</buildCommand>\r\n\t</buildSpec>\r\n\t<natures>\r\n\t\t<nature>org.eclipse.jdt.core.javanature</nature>\r\n\t</natures>\r\n</projectDescription>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.project b/.project
+--- a/.project	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/.project	(date 1670363637836)
+@@ -1,15 +1,37 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+ 	<name>Hotel_M</name>
+-	<comment/>
+-	<projects/>
++	<comment></comment>
++	<projects>
++	</projects>
+ 	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.wst.common.project.facet.core.builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 		<buildCommand>
+ 			<name>org.eclipse.jdt.core.javabuilder</name>
+-			<arguments/>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.wst.validation.validationbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.m2e.core.maven2Builder</name>
++			<arguments>
++			</arguments>
+ 		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
++		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
++		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
++		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
++		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+ 	</natures>
+-</projectDescription>
+\ No newline at end of file
++</projectDescription>
+Index: .idea/Hotel_M.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module classpath=\"eclipse\" classpath-dir=\"$MODULE_DIR$\" org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Hotel_M.iml b/.idea/Hotel_M.iml
+--- a/.idea/Hotel_M.iml	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/.idea/Hotel_M.iml	(date 1670357399193)
+@@ -1,7 +1,2 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<module classpath="eclipse" classpath-dir="$MODULE_DIR$" org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
++<module classpath="eclipse" classpath-dir="$MODULE_DIR$" org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4" />
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"HotelM:war\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"37f06c02-f044-47b3-8d1e-54592c5759df\" name=\"Changes\" comment=\"eclipse compatible project\">\r\n      <change afterPath=\"$PROJECT_DIR$/.classpath\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/Hotel_M.eml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/Hotel_M.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.project\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/delete-hotel.jsp\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/new-hotel.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/compiler.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/compiler.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05bc3702ef558c13c75d01a3bf6faf8a558bbd86\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40c1ecd8663807a01a53cb1d7fb1a7a2fc6f2f26\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/550cde10645ad73b37861f018145716e5979fd10\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/5/8/582bc84275d5b626d3b0f12b82e66269f2fac2a7\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64700e209b7424484b2d90b42977a2eb833c038c\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b6215fdb297a9bbe33f00358ce5d76a9e8f9f02\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c57887f956c133f6b3c4a4a782d33ee916a0de24\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/controller/HotelController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/controller/HotelController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/model/Hotel.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/model/Hotel.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/resources/video/travel.mp4\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/hotel.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/hotel.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/login.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/login.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/resources/music/music.mp3\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/resources/video/travel.mp4\" beforeDir=\"false\" />\r\n    </list>\r\n    <list id=\"cd82c26c-8f0f-46df-8df8-c9b5af53b083\" name=\"New changelist\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeInsightWorkspaceSettings\">\r\n    <option name=\"optimizeImportsOnTheFly\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"spring-beans.schema\" />\r\n        <option value=\"com.haulmont.jpb.JpaEntity\" />\r\n        <option value=\"com.haulmont.jpb.JpaRepository\" />\r\n        <option value=\"Jsp File\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"HARD\" />\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"myId2FirstActivated\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"true\" />\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"true\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"true\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"false\" />\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"false\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GNJ6olRa8GFrGanjP6L3ICYcNF\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"RequestMappingsPanelOrder0\": \"0\",\r\n    \"RequestMappingsPanelOrder1\": \"1\",\r\n    \"RequestMappingsPanelWidth0\": \"75\",\r\n    \"RequestMappingsPanelWidth1\": \"75\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"SONARLINT_PRECOMMIT_ANALYSIS\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"/Users/jessica/IdeaProjects/Hotel_M/src/main/webapp/WEB-INF/jsp\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"spring.configuration.checksum\": \"8e87e862476d518aae6be5069e370506\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"mysql\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/resources\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/resources/images\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/resources/images/banner\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/resources/styles\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/resources/images/icons\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/resources/images\" />\r\n      <recent name=\"C:\\Users\\vinee\\Downloads\\demo\\demo\\src\\main\\webapp\\resources\\styles\" />\r\n    </key>\r\n    <key name=\"ExtractSuperBase.RECENT_KEYS\">\r\n      <recent name=\"com.hotelManagement.Services\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"configurationTypes\">\r\n      <set>\r\n        <option value=\"SpringBootApplicationConfigurationType\" />\r\n      </set>\r\n    </option>\r\n    <option name=\"openRunningConfigInTab\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HotelM (1)\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\">\r\n      <option name=\"ACTIVE_PROFILES\" />\r\n      <module name=\"hotelM\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.hotel.management.HotelM\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\">\r\n      <option name=\"ACTIVE_PROFILES\" />\r\n      <module name=\"Hotel_M\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.67\" ALTERNATIVE_JRE_ENABLED=\"false\">\r\n      <option name=\"OPEN_IN_BROWSER_URL\" value=\"http://localhost:8080/Hotel_M_war/\" />\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"Hotel_M:war\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/Hotel_M_war\" />\r\n          </settings>\r\n        </artifact>\r\n        <artifact name=\"Hotel_M:war exploded\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/Hotel_M_war_exploded\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"0be525f1-440b-4216-9bab-1aa503fa2f9c\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"51266\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"Hotel_M:war\" />\r\n          <artifact name=\"Hotel_M:war exploded\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"37f06c02-f044-47b3-8d1e-54592c5759df\" name=\"Changes\" comment=\"\" />\r\n      <created>1666222938274</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666222938274</updated>\r\n      <workItem from=\"1667690527241\" duration=\"2795000\" />\r\n      <workItem from=\"1667775455916\" duration=\"3968000\" />\r\n      <workItem from=\"1667783235691\" duration=\"455000\" />\r\n      <workItem from=\"1667783708096\" duration=\"8060000\" />\r\n      <workItem from=\"1667852807323\" duration=\"16433000\" />\r\n      <workItem from=\"1667911468049\" duration=\"36656000\" />\r\n      <workItem from=\"1667960672369\" duration=\"186000\" />\r\n      <workItem from=\"1667960864922\" duration=\"13000\" />\r\n      <workItem from=\"1667960892370\" duration=\"663000\" />\r\n      <workItem from=\"1667962745670\" duration=\"941000\" />\r\n      <workItem from=\"1668296162940\" duration=\"13348000\" />\r\n      <workItem from=\"1668378575597\" duration=\"11087000\" />\r\n      <workItem from=\"1668456650526\" duration=\"13528000\" />\r\n      <workItem from=\"1668643523880\" duration=\"996000\" />\r\n      <workItem from=\"1668644537529\" duration=\"847000\" />\r\n      <workItem from=\"1668645390935\" duration=\"8068000\" />\r\n      <workItem from=\"1668654774524\" duration=\"1907000\" />\r\n      <workItem from=\"1668656893175\" duration=\"788000\" />\r\n      <workItem from=\"1668657733855\" duration=\"9000\" />\r\n      <workItem from=\"1669066011458\" duration=\"19221000\" />\r\n      <workItem from=\"1669122194701\" duration=\"7061000\" />\r\n      <workItem from=\"1669160030198\" duration=\"5545000\" />\r\n      <workItem from=\"1669499851454\" duration=\"4722000\" />\r\n      <workItem from=\"1669508779725\" duration=\"927000\" />\r\n      <workItem from=\"1669678667762\" duration=\"2176000\" />\r\n      <workItem from=\"1670020978307\" duration=\"1985000\" />\r\n      <workItem from=\"1670184578059\" duration=\"15689000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Initial Commit\">\r\n      <created>1667963108724</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667963108724</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Recovery files\">\r\n      <created>1667964729839</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667964729839</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Recovery files\">\r\n      <created>1667964900795</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667964900795</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Recovery files\">\r\n      <created>1667965694577</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667965694577</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Initial commit\">\r\n      <created>1667967135902</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667967135902</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"List, view and update hotel\">\r\n      <created>1668643613346</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668643613346</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"List, view and update hotel\">\r\n      <created>1668643657973</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668643657973</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Initial commit\">\r\n      <created>1668645552397</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668645552397</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Initial commit\">\r\n      <created>1668650476053</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668650476053</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Hotel files\">\r\n      <created>1668650563854</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668650563854</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Hotel files\">\r\n      <created>1668650682874</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668650682874</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Hotel files\">\r\n      <created>1668651552619</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668651552619</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Hotel files\">\r\n      <created>1668651577085</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668651577085</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Hotel files\">\r\n      <created>1668651810447</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668651810447</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Hotel files\">\r\n      <created>1668652326112</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668652326112</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Hotel files\">\r\n      <created>1668653364827</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668653364827</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"Initial commit\">\r\n      <created>1668657078934</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668657078934</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"Login change using custom webSecurity Configuration\">\r\n      <created>1669129234364</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669129234364</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Hotel edition\">\r\n      <created>1669166024578</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669166024578</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"eclipse compatible project\">\r\n      <created>1669500287496</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669500287496</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"21\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:jakarta.persistence:jakarta.persistence-api\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.hibernate:hibernate-core\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"CUSTOM_BOOLEAN_PROPERTIES\">\r\n                <map>\r\n                  <entry key=\"Show.Git.Branches\" value=\"false\" />\r\n                </map>\r\n              </option>\r\n              <option name=\"COLUMN_ID_WIDTH\">\r\n                <map>\r\n                  <entry key=\"Table.Default.Author.ColumnIdWidth\" value=\"111\" />\r\n                  <entry key=\"Table.Default.Date.ColumnIdWidth\" value=\"113\" />\r\n                  <entry key=\"Table.Space.CommitStatus.ColumnIdWidth\" value=\"113\" />\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"HEAD\" />\r\n                </option>\r\n              </RecentGroup>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"master\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <ignored-roots>\r\n      <path value=\"$PROJECT_DIR$/..\" />\r\n      <path value=\"$PROJECT_DIR$\" />\r\n    </ignored-roots>\r\n    <MESSAGE value=\"Initial Commit\" />\r\n    <MESSAGE value=\"Recovery files\" />\r\n    <MESSAGE value=\"List, view and update hotel\" />\r\n    <MESSAGE value=\"Hotel files\" />\r\n    <MESSAGE value=\"Initial commit\" />\r\n    <MESSAGE value=\"Login change using custom webSecurity Configuration\" />\r\n    <MESSAGE value=\"Hotel edition\" />\r\n    <MESSAGE value=\"eclipse compatible project\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"eclipse compatible project\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java</url>\r\n          <line>45</line>\r\n          <option name=\"timeStamp\" value=\"27\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n    <watches-manager>\r\n      <configuration name=\"SpringBootApplicationConfigurationType\">\r\n        <watch expression=\"userService.userRepository\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 431b8ef6519ab3fb705b3b2e82f99da7eff4e3b7)
++++ b/.idea/workspace.xml	(date 1670362504982)
+@@ -10,47 +10,52 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="eclipse compatible project">
+-      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/Hotel_M.eml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/Hotel_M.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/delete-hotel.jsp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/new-hotel.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05bc3702ef558c13c75d01a3bf6faf8a558bbd86" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40c1ecd8663807a01a53cb1d7fb1a7a2fc6f2f26" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/550cde10645ad73b37861f018145716e5979fd10" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/8/582bc84275d5b626d3b0f12b82e66269f2fac2a7" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64700e209b7424484b2d90b42977a2eb833c038c" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b6215fdb297a9bbe33f00358ce5d76a9e8f9f02" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c57887f956c133f6b3c4a4a782d33ee916a0de24" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/Hotel_M.eml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hotel_M.eml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/Hotel_M.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hotel_M.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/HotelService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/HotelController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Hotel.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Role.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/video/travel.mp4" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebConfiguration.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Configurations/WebSecurityConfig.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/HotelM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/HotelM.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/HotelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/HotelRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/RoleRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Repository/UserRepository.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/HotelService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/MyUserDetailsService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/Services/UserService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HomeController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/controller/HotelController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Hotel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role$RoleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role$RoleBuilder.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/Role.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User$UserBuilder.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotel/management/model/User.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebConfiguration.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebSecurityConfig.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/HotelM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/HotelM.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/HotelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/HotelRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/RoleRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/UserRepository.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/MyUserDetailsService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/UserService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HomeController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role$RoleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role$RoleBuilder.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/hotel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/hotel.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/login.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/resources/music/music.mp3" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/resources/video/travel.mp4" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+     </list>
+     <list id="cd82c26c-8f0f-46df-8df8-c9b5af53b083" name="New changelist" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+@@ -138,7 +143,7 @@
+     "WebServerToolWindowFactoryState": "false",
+     "last_opened_file_path": "/Users/jessica/IdeaProjects/Hotel_M/src/main/webapp/WEB-INF/jsp",
+     "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Project",
++    "project.structure.last.edited": "Modules",
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.2",
+     "settings.editor.selected.configurable": "preferences.pluginManager",
+@@ -172,20 +177,13 @@
+   <component name="RunDashboard">
+     <option name="configurationTypes">
+       <set>
++        <option value="Application" />
+         <option value="SpringBootApplicationConfigurationType" />
+       </set>
+     </option>
+     <option name="openRunningConfigInTab" value="true" />
+   </component>
+-  <component name="RunManager">
+-    <configuration name="HotelM (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+-      <option name="ACTIVE_PROFILES" />
+-      <module name="hotelM" />
+-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hotel.management.HotelM" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
++  <component name="RunManager" selected="Application.Hotel">
+     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+       <option name="ACTIVE_PROFILES" />
+       <module name="Hotel_M" />
+@@ -288,6 +286,60 @@
+         </option>
+       </method>
+     </configuration>
++    <configuration name="Hotel" type="Application" factoryName="Application">
++      <option name="MAIN_CLASS_NAME" value="com.hotel.management.HotelM" />
++      <module name="Hotel_M" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="All in Hotel_M (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="Hotel_M" />
++      <option name="PACKAGE_NAME" value="" />
++      <option name="TEST_OBJECT" value="package" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="All in Hotel_M" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="Hotel_M" />
++      <option name="PACKAGE_NAME" value="" />
++      <option name="TEST_OBJECT" value="package" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="All in Hotel_M" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="Hotel_M" />
++      <option name="PACKAGE_NAME" value="" />
++      <option name="MAIN_CLASS_NAME" value="" />
++      <option name="METHOD_NAME" value="" />
++      <option name="TEST_OBJECT" value="package" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="HotelM (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
++      <option name="ACTIVE_PROFILES" />
++      <module name="hotelM" />
++      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hotel.management.HotelM" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <list>
++      <item itemvalue="Application.Hotel" />
++      <item itemvalue="JUnit.All in Hotel_M" />
++      <item itemvalue="JUnit.All in Hotel_M (1)" />
++      <item itemvalue="JUnit.All in Hotel_M (2)" />
++    </list>
++    <recent_temporary>
++      <list>
++        <item itemvalue="JUnit.All in Hotel_M (2)" />
++        <item itemvalue="JUnit.All in Hotel_M (1)" />
++        <item itemvalue="JUnit.All in Hotel_M" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
