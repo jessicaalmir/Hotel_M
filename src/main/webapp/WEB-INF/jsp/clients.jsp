@@ -27,6 +27,7 @@
             </tr>
             </thead>
             <tbody>
+<<<<<<< Updated upstream
             <c:forEach items="${clients}" var="client">
               <tr class="align-items-center">
                 <th scope="row">${client.id}</th>
@@ -39,6 +40,20 @@
                                 <div class="action-button"><a href="view-clients/${client.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/plus.png" alt="Details" /></a></div>
                                 <div class="action-button"><a href="edit-clients/${client.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/edit.png" alt="Details" /></a></div>
                                 <div class="action-button"><a href="delete-clients/${client.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/delete.png" alt="Details" /></a></div>
+=======
+            <c:forEach items="${clients}" var="clients">
+              <tr class="align-items-center">
+                <th scope="row">${clients.id}</th>
+                <td>${clients.name}</td>
+                <td>${clients.address}</td>
+                <td>${clients.phone}</td>
+                <td>${clients.email}</td>
+            <td>
+                              <div class="d-flex w-100 justify-content-center my-auto">
+                                <div class="action-button"><a href="clients_view/${clients.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/plus.png" alt="Details" /></a></div>
+                                <div class="action-button"><a href="clients_edit/${clients.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/edit.png" alt="Details" /></a></div>
+                                <div class="action-button"><a href="clients_delete/${clients.id}"><img src="${pageContext.request.contextPath}/resources/images/icons/delete.png" alt="Details" /></a></div>
+>>>>>>> Stashed changes
                               </div>
                             </td>
 

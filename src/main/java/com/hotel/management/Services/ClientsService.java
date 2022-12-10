@@ -22,6 +22,30 @@ public class ClientsService {
             return false;
         }
     }
+<<<<<<< Updated upstream
+=======
+    //Update clients details
+    public Clients updateClients(Clients clients) {
+        Clients clientsUpdated = clientsRepository.findById(clients.getId()).get();
+
+        clientsUpdated.setAddress(clients.getAddress());
+        clientsUpdated.setEmail(clients.getEmail());
+        clientsUpdated.setName(clients.getName());
+        clientsUpdated.setPhone(clients.getPhone());
+
+
+        return clientsRepository.save(clientsUpdated);
+    }
+    public boolean deleteClients(Integer clientsId){
+        try{
+            clientsRepository.deleteById(clientsId);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+>>>>>>> Stashed changes
     //Find All Hotels
     public List<Clients> findAll(){
         return clientsRepository.findAll();
