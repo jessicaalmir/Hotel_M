@@ -8,18 +8,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-<<<<<<< Updated upstream
-=======
 import org.springframework.web.bind.annotation.PathVariable;
->>>>>>> Stashed changes
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-<<<<<<< Updated upstream
-=======
 import java.util.Optional;
->>>>>>> Stashed changes
+
 
 @Controller
 public class ClientsController {
@@ -44,12 +39,9 @@ public class ClientsController {
     }
 
     @PostMapping(value = "/clients_newAdd")
-<<<<<<< Updated upstream
-    public ModelAndView newHotel(ModelMap model, @Valid @ModelAttribute("clients") Clients clients, BindingResult result) {
-=======
+
     public ModelAndView newClients(ModelMap model, @Valid @ModelAttribute("clients") Clients clients, BindingResult result) {
->>>>>>> Stashed changes
-        ModelAndView modelAndView = new ModelAndView();
+     ModelAndView modelAndView = new ModelAndView();
         if(result.hasErrors()){
             modelAndView.setViewName("clients_newAdd");
             model.put("created",false);
@@ -66,8 +58,6 @@ public class ClientsController {
         }
         return modelAndView;
     }
-<<<<<<< Updated upstream
-=======
     //View clients detail
     @GetMapping(value = "/clients_view/{id}")
     public ModelAndView viewHotel(@PathVariable(value="id") Integer id, ModelMap model) {
@@ -136,7 +126,4 @@ public class ClientsController {
         }
         return modelAndView;
     }
-
->>>>>>> Stashed changes
-
 }
