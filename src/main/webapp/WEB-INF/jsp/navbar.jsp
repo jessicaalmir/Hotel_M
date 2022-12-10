@@ -37,15 +37,10 @@
             <ul class="navbar-nav mr-auto nav-fill w-100">
                 <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/hotel">Hotel</a></li>
-<<<<<<< Updated upstream
-                <li><a href="${pageContext.request.contextPath}/login">Booking</a></li>
-=======
                 <li><a href="${pageContext.request.contextPath}/booking">Booking</a></li>
                 <li><a href="${pageContext.request.contextPath}/clients">Clients</a></li>
->>>>>>> Stashed changes
                 <li><a href="${pageContext.request.contextPath}/checking">Check-In</a></li>
                 <li><a href="${pageContext.request.contextPath}/room">Rooms</a></li>
-                <li><a href="${pageContext.request.contextPath}/">Reservation</a></li>
                 <li><a href="${pageContext.request.contextPath}/payment">Payment</a></li>
             </ul>
         </nav>

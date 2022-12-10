@@ -160,7 +160,7 @@
     </div>
     <div class="row m-3">
         <div class="col-md-12 text-center">
-            <button id="btn-back" class="btn btn-primary" onClick="back()">Cancel</button>
+            <button id="btn-back" type="button" class="btn btn-primary" onClick="back()">Cancel</button>
             <button type="submit" class="btn btn-danger">Delete</button>
         </div>
     </div>
@@ -169,7 +169,7 @@
 <c:if test = "${message !=null}">
     <div class="row m-3">
         <div class="col-md-12 text-center">
-            <button id="btn-back1" class="btn btn-primary" onClick="back()">Back</button>
+            <button type="button" id="btn-back1" class="btn btn-primary" onClick="back()">Back</button>
         </div>
     </div>
 </c:if>
