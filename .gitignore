@@ -1,5 +1,10 @@
 /target/
+<<<<<<< Updated upstream
 application.properties
+=======
+application.properties
+.idea
+>>>>>>> Stashed changes
 .idea
 .metadata
 .settings

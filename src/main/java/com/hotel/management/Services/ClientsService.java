@@ -22,8 +22,6 @@ public class ClientsService {
             return false;
         }
     }
-<<<<<<< Updated upstream
-=======
     //Update clients details
     public Clients updateClients(Clients clients) {
         Clients clientsUpdated = clientsRepository.findById(clients.getId()).get();
@@ -45,8 +43,7 @@ public class ClientsService {
             return false;
         }
     }
->>>>>>> Stashed changes
-    //Find All Hotels
+
     public List<Clients> findAll(){
         return clientsRepository.findAll();
     }

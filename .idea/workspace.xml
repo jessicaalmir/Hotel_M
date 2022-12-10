@@ -1,74 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="HotelM:war" />
-    </artifacts-to-build>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="Checking upload v2">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m___Changes_.xml" afterDir="false" />
+    <list default="true" id="3b663a7c-94f9-4f11-bb0e-ade3719f0822" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hotelM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Hotel_M.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d2b1e161-6ff6-4911-b0dd-dcc5845b3960/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2022-11-22T092156.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2022-11-22T092359.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/Hotel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/HotelService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/MyUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/Role$RoleBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/WebConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_2_47_p_m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HomeController1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/Hotel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/Hotel1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelController1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelM1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelRepository1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/HotelService1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/MyUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/MyUserDetailsService1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/Role$RoleBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/Role$RoleBuilder1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/Role1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/RoleRepository1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/User$UserBuilder1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/User1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/UserRepository1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/UserService1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/WebConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/WebConfiguration1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/WebSecurityConfig1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/hotelM-0.0.1-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/hotelM-0.0.1-SNAPSHOT.war.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-06_5_45_p_m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4e201a3be15277ef26a3a70916f170d5cab0e6b2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65de0267d92ba0c20e078551b9f794c0e7a2e663" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f5626e897fadcb7f4e37681ed086f7ed250df0b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca54b01281476a83c3079c73bf113f3214916d1d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ce5742044677eda62ea1bb9282b73aecb4de0b9d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/CheckInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/Checking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wildwebdeveloper.embedder.node/node-v16.14.2-win-x64/node_modules/npm/node_modules/clone/clone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wildwebdeveloper.embedder.node/node-v16.14.2-win-x64/node_modules/npm/node_modules/clone/clone.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/.jsdtscope" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/ClientsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/ClientsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/Services/MyUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/ClientsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/controller/ClientsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/management/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/clients.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/clients.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/clients_edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/clients_edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT.war.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Configurations/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/HotelM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/HotelM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/HotelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/HotelRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/HotelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/MyUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/Services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/controller/HotelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Hotel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role$RoleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role$RoleBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotel/management/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotelM-0.0.1-SNAPSHOT/WEB-INF/jsp/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
-    <list id="cd82c26c-8f0f-46df-8df8-c9b5af53b083" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="spring-beans.schema" />
-        <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="com.haulmont.jpb.JpaRepository" />
-        <option value="Jsp File" />
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -80,493 +146,64 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2GNJ6olRa8GFrGanjP6L3ICYcNF" />
+  <component name="ProjectId" id="2IhcOdSMdVMHDApgOqMmy2yI0lX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jessica/IdeaProjects/Hotel_M/src/main/webapp/WEB-INF/jsp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;8e87e862476d518aae6be5069e370506&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources/images" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources/images/banner" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources/styles" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hotel" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources/images/icons" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources/images" />
-      <recent name="C:\Users\vinee\Downloads\demo\demo\src\main\webapp\resources\styles" />
-    </key>
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="com.hotelManagement.Services" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-    <option name="openRunningConfigInTab" value="true" />
-  </component>
-  <component name="RunManager" selected="Spring Boot.HotelM ">
-    <configuration name="All in Hotel_M" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager">
+    <configuration name="HotelM" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.hotel.management.HotelM" />
       <module name="Hotel_M" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HotelM " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ALTERNATIVE_JRE_PATH" value="18" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="Hotel_M" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hotel.management.HotelM" />
+    <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ACTIVE_PROFILES" />
-      <module name="Hotel_M" />
-      <option name="SPRING_BOOT_MAIN_CLASS" />
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.67" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Hotel_M_war/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="Hotel_M:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/Hotel_M_war" />
-          </settings>
-        </artifact>
-        <artifact name="Hotel_M:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/Hotel_M_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="0be525f1-440b-4216-9bab-1aa503fa2f9c" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51266" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Hotel_M:war" />
-          <artifact name="Hotel_M:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="JUnit.All in Hotel_M" />
-      <item itemvalue="Spring Boot.HotelM " />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.All in Hotel_M" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="37f06c02-f044-47b3-8d1e-54592c5759df" name="Changes" comment="" />
-      <created>1666222938274</created>
+      <changelist id="3b663a7c-94f9-4f11-bb0e-ade3719f0822" name="Changes" comment="" />
+      <created>1670637235196</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666222938274</updated>
-      <workItem from="1667690527241" duration="2795000" />
-      <workItem from="1667775455916" duration="3968000" />
-      <workItem from="1667783235691" duration="455000" />
-      <workItem from="1667783708096" duration="8060000" />
-      <workItem from="1667852807323" duration="16433000" />
-      <workItem from="1667911468049" duration="36656000" />
-      <workItem from="1667960672369" duration="186000" />
-      <workItem from="1667960864922" duration="13000" />
-      <workItem from="1667960892370" duration="663000" />
-      <workItem from="1667962745670" duration="941000" />
-      <workItem from="1668296162940" duration="13348000" />
-      <workItem from="1668378575597" duration="11087000" />
-      <workItem from="1668456650526" duration="13528000" />
-      <workItem from="1668643523880" duration="996000" />
-      <workItem from="1668644537529" duration="847000" />
-      <workItem from="1668645390935" duration="8068000" />
-      <workItem from="1668654774524" duration="1907000" />
-      <workItem from="1668656893175" duration="788000" />
-      <workItem from="1668657733855" duration="9000" />
-      <workItem from="1669066011458" duration="19221000" />
-      <workItem from="1669122194701" duration="7061000" />
-      <workItem from="1669160030198" duration="5545000" />
-      <workItem from="1669499851454" duration="4722000" />
-      <workItem from="1669508779725" duration="927000" />
-      <workItem from="1669678667762" duration="2176000" />
-      <workItem from="1670020978307" duration="1985000" />
-      <workItem from="1670184578059" duration="15971000" />
-      <workItem from="1670360880549" duration="1667000" />
-      <workItem from="1670474213699" duration="1056000" />
-      <workItem from="1670475361823" duration="121000" />
-      <workItem from="1670536011009" duration="1754000" />
-      <workItem from="1670539970697" duration="8234000" />
+      <updated>1670637235196</updated>
     </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1667963108724</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1667963108724</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Recovery files">
-      <created>1667964729839</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667964729839</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Recovery files">
-      <created>1667964900795</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667964900795</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Recovery files">
-      <created>1667965694577</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1667965694577</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Initial commit">
-      <created>1667967135902</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1667967135902</updated>
-    </task>
-    <task id="LOCAL-00006" summary="List, view and update hotel">
-      <created>1668643613346</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1668643613346</updated>
-    </task>
-    <task id="LOCAL-00007" summary="List, view and update hotel">
-      <created>1668643657973</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1668643657973</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Initial commit">
-      <created>1668645552397</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1668645552397</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Initial commit">
-      <created>1668650476053</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1668650476053</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Hotel files">
-      <created>1668650563854</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1668650563854</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Hotel files">
-      <created>1668650682874</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1668650682874</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Hotel files">
-      <created>1668651552619</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1668651552619</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Hotel files">
-      <created>1668651577085</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1668651577085</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Hotel files">
-      <created>1668651810447</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1668651810447</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Hotel files">
-      <created>1668652326112</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1668652326112</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Hotel files">
-      <created>1668653364827</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1668653364827</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Initial commit">
-      <created>1668657078934</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1668657078934</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Login change using custom webSecurity Configuration">
-      <created>1669129234364</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1669129234364</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Hotel edition">
-      <created>1669166024578</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1669166024578</updated>
-    </task>
-    <task id="LOCAL-00020" summary="eclipse compatible project">
-      <created>1669500287496</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1669500287496</updated>
-    </task>
-    <task id="LOCAL-00021" summary="creating and deleting hotel">
-      <created>1670209434951</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1670209434951</updated>
-    </task>
-    <task id="LOCAL-00022" summary="eclipse compatible project">
-      <created>1670468596563</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1670468596563</updated>
-    </task>
-    <task id="LOCAL-00023" summary="eclipse compatible project">
-      <created>1670475421300</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1670475421300</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Checking upload v1">
-      <created>1670541407433</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1670541407433</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
-    <option featureType="dependencySupport" implementationName="java:org.hibernate:hibernate-core" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="false" />
-                </map>
-              </option>
-              <option name="COLUMN_ID_WIDTH">
-                <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="111" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="113" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="113" />
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
-                </option>
-              </RecentGroup>
-            </list>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.." />
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-    <MESSAGE value="Initial Commit" />
-    <MESSAGE value="Recovery files" />
-    <MESSAGE value="List, view and update hotel" />
-    <MESSAGE value="Hotel files" />
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="Login change using custom webSecurity Configuration" />
-    <MESSAGE value="Hotel edition" />
-    <MESSAGE value="creating and deleting hotel" />
-    <MESSAGE value="eclipse compatible project" />
-    <MESSAGE value="Checking upload v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checking upload v1" />
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="userService.userRepository" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Hotel_M$HotelM_.ic" NAME="HotelM  Coverage Results" MODIFIED="1670473971818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
