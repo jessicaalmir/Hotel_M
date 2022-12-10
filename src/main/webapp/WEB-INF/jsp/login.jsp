@@ -16,18 +16,21 @@
   </head>
   <body>
     <div id="login-form">
-      <div class="explore">
-        <h1>Sign in</h1>
-      </div>
-
         <c:if test="${param.error == true}">
           <div class="alert alert-danger">
             <p class="ui-state-error-text">User Name or Password invalid, please verify</p>
           </div>
         </c:if>
 
-
-      <div class="dark-form" id="contact-form">
+      <div class="row">
+        <div class="mx-auto" style="">
+          <img alt="logo" src="${pageContext.request.contextPath}/resources/images/logo.png" />
+        </div>
+      </div>
+      <div class="explore">
+        <h1>Sign in</h1>
+      </div>
+      <div class="dark-form row" id="contact-form">
         <form id="Login" action="/login" method="post">
           <table>
             <tr>
